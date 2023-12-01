@@ -11,6 +11,7 @@ import (
 
 func main() {
 	// Open the text file for writing
+
 	file, err := os.OpenFile("user_actions.txt", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		fmt.Println("Error opening file:", err)
@@ -71,4 +72,3 @@ func logAction(writer *bufio.Writer, device, action string, args ...interface{})
 	writer.WriteString(logString)
 	writer.Flush()
 }
-
